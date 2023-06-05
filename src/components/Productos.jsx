@@ -1,8 +1,16 @@
 import Producto from "./Producto";
 
+const styles = {
+  productos:{
+    display:'flex',
+    flexDirection:'row',
+    justifyContent:'space-between'
+  },
+};
+
 const Productos = ({ agregarAlCarro, productos }) => {
   return (
-    <div>
+    <div style={styles.productos}>
       {
         productos.map(producto => {
           return <Producto

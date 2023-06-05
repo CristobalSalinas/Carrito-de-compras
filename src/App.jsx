@@ -20,10 +20,14 @@ function App() {
     },
   ];
 
+  const agregarAlCarro = (producto) =>{
+    console.log('agregarAlCarro',producto);
+  };
+
   return (
     <>
       <Productos 
-        agregarAlCarro={()=>{}}
+        agregarAlCarro={agregarAlCarro}
         productos={productos}
         />
     </>
