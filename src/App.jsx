@@ -3,6 +3,8 @@ import Layout from './components/Layout';
 import Title from "./components/Title";
 import Navbar from "./components/Navbar";
 
+import { useState } from "react";
+
 function App() {
 
   const productos = [
@@ -22,9 +24,20 @@ function App() {
       img:'./src/assets/productos/lechuga.jpg',
     },
   ];
+  const [carro,setCarro] = useState([]);
 
   const agregarAlCarro = (producto) =>{
-    console.log('agregarAlCarro',producto);
+    if(carro.find(x=>x.name === producto.name)){
+      const new_carro = carro.map(x=>x.name === producto.name ? ({
+        ...x,
+        quantity:x.quantity + 1
+      }):x);
+      return setCarro(new_carro);
+    }
+    return setCarro(carro.concat({
+      ...producto,
+      quantity:1
+    }))
   };
 
   return (
