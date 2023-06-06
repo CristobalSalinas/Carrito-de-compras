@@ -1,4 +1,7 @@
 import Productos from "./components/Productos";
+import Layout from './components/Layout';
+import Title from "./components/Title";
+import Navbar from "./components/Navbar";
 
 function App() {
 
@@ -26,10 +29,14 @@ function App() {
 
   return (
     <>
-      <Productos 
-        agregarAlCarro={agregarAlCarro}
-        productos={productos}
-        />
+      <Navbar />
+      <Layout>
+        <Title />
+        <Productos 
+          agregarAlCarro={agregarAlCarro}
+          productos={productos}
+          />
+      </Layout>
     </>
   )
 }
