@@ -1,3 +1,6 @@
+import Logo from "./Logo";
+import Cart from "./Cart";
+
 const styles = {
     navbar:{
         display:'flex',
@@ -14,8 +17,8 @@ const styles = {
 const Navbar = () =>{
     return (
         <nav style={styles.navbar}>
-            <p>Logo</p>
-            <p>Carro</p>
+            <Logo />
+            <Cart />
         </nav>
     );
 };
