@@ -1,4 +1,5 @@
 import BubbleAlert from './BubbleAlert';
+import CartDetails from './CartDetails';
 
 const styles = {
     cart:{
@@ -27,6 +28,7 @@ const Cart = ({carro}) =>{
                 {quantity > 0 && <BubbleAlert value={quantity}/>}
             </span>
             <button style={styles.cart}>Carro</button>
+            <CartDetails carro={carro}/>
         </div>
     );
 };
