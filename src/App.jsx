@@ -25,6 +25,7 @@ function App() {
     },
   ];
   const [carro,setCarro] = useState([]);
+  const [visibleCart,setVisibleCart] = useState(false);
 
   const agregarAlCarro = (producto) =>{
     if(carro.find(x=>x.name === producto.name)){
@@ -40,9 +41,15 @@ function App() {
     }))
   };
 
+  const showCart = () =>{
+    if(carro.length > 0){
+      setVisibleCart(!visibleCart);
+    }
+  };
+
   return (
     <>
-      <Navbar carro={carro}/>
+      <Navbar carro={carro} showCart={showCart} visibleCart={visibleCart}/>
       <Layout>
         <Title />
         <Productos 

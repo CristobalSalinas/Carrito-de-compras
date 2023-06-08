@@ -18,7 +18,7 @@ const styles = {
     }
 };
 
-const Cart = ({carro}) =>{
+const Cart = ({carro,showCart,visibleCart}) =>{
 
     const quantity = carro.reduce((total,c)=>total+c.quantity,0);
 
@@ -27,8 +27,8 @@ const Cart = ({carro}) =>{
             <span style={styles.bubble}>
                 {quantity > 0 && <BubbleAlert value={quantity}/>}
             </span>
-            <button style={styles.cart}>Carro</button>
-            <CartDetails carro={carro}/>
+            <button onClick={showCart} style={styles.cart}>Carro</button>
+            {visibleCart && <CartDetails carro={carro}/>}
         </div>
     );
 };

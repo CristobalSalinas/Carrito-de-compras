@@ -14,11 +14,11 @@ const styles = {
     }
 };
 
-const Navbar = ({carro}) =>{
+const Navbar = ({carro,showCart,visibleCart}) =>{
     return (
         <nav style={styles.navbar}>
             <Logo />
-            <Cart carro={carro}/>
+            <Cart carro={carro} showCart={showCart} visibleCart={visibleCart}/>
         </nav>
     );
 };
