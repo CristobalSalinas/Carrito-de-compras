@@ -17,11 +17,14 @@ const styles = {
     }
 };
 
-const Cart = () =>{
+const Cart = ({carro}) =>{
+
+    const quantity = carro.reduce((total,c)=>total+c.quantity,0);
+
     return (
         <div>
             <span style={styles.bubble}>
-                <BubbleAlert/>
+                {quantity > 0 && <BubbleAlert value={quantity}/>}
             </span>
             <button style={styles.cart}>Carro</button>
         </div>

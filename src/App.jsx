@@ -42,7 +42,7 @@ function App() {
 
   return (
     <>
-      <Navbar />
+      <Navbar carro={carro}/>
       <Layout>
         <Title />
         <Productos 
